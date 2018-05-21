@@ -8,6 +8,12 @@
 }
 
 /* ELEMENTS */
+
+section {
+  padding-bottom: 30px;
+  width: 100%;
+}
+
 ul {
   list-style: none;
 }
@@ -17,20 +23,36 @@ a {
   color: white;
 }
 
+h1 {
+  font-size: 200%;
+}
+
+h2 {
+  font-size: 150%;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
 /* HEADER */
 
 header {
   background-image: linear-gradient(rgba(0,0,0, 0.7), rgba(0,0,0, 0.7)), url('img/16th-century-scroll.JPG');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   height: 50vh;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto
+}
 /*  NAV */
 
 .main-nav {
-  float: right;
-  margin-top: 20px;
+  text-align: right;
+  padding-top: 20px;
 }
 
 .main-nav li {
@@ -44,3 +66,33 @@ header {
 }
 
 /*  SCROLL QUOTES */
+
+
+.scroll-quotes {
+  background-image: linear-gradient(rgba(0,0,0, 0.7), rgba(0,0,0, 0.7)), url('img/scrolls-pile2.JPG');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+blockquote {
+  padding: 2%;
+  font-style: italic;
+  line-height: 145%;
+  position: relative;
+  margin-top: 40px;
+}
+
+blockquote:before {
+  content: '\201C';
+  font-size: 500%;
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: -2px;
+}
+
+cite {
+  margin-top: 10px;
+  display: block;
+}
