@@ -1,68 +1,46 @@
-
-input {
-  width: 100%;
-  padding-top: 10px;
+* {
+  margin: 0;
+  padding: 0;
+  color: #585858;
+  font-family: 'Lato', 'Arial', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
 }
 
-input:focus {
-  border: 1px solid lightblue;
+/* ELEMENTS */
+ul {
+  list-style: none;
 }
 
-.submit {
-  width: 25%;
+a {
+  text-decoration: none;
+  color: white;
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.4);
-  animation-name: '';
-  animation-duration: 1.0s
+/* HEADER */
+
+header {
+  background-image: linear-gradient(rgba(0,0,0, 0.7), rgba(0,0,0, 0.7)), url('img/16th-century-scroll.JPG');
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
 }
 
-.modal-content {
-  position: relative;
-  background-color: #fefefe;
-  margin: 10% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  border-radius: 20px;
-  width: 80%;
-  animation-name: animatetop;
-  animation-duration: 1.0s
+/*  NAV */
 
-}
-
-@keyframes animatetop {
-  from {top: -300px; opacity: 0}
-  to {top: 0; opacity: 1}
-}
-
-@keyframes disappear {
-  from {top: 0; opacity: 1}
-  to {top: -300px; opacity: 0}
-}
-
-@keyframes fade {
-  from {background-color: rgba(0,0,0,0.4);}
-  to {background-color: rgba(0,0,0,0 );}
-}
-
-
-.close {
-  color: #aaa;
+.main-nav {
   float: right;
-  font-size: 28px;
-  font-weight: bold;
+  margin-top: 20px;
 }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+.main-nav li {
+  display: inline;
+  margin-right: 50px;
 }
+
+/* DEFINITIONS */
+.scroll-definitions {
+  background-color: #F4F4F4;
+}
+
+/*  SCROLL QUOTES */
