@@ -1,6 +1,10 @@
 /* colors */
 /* red:  #CC0000 */
-/* grey: #F4F4F4*/
+/* grey background: #F4F4F4*/
+/* grey text: #585858 */
+/* 16th 16th-century-scroll: http://www.standard.net/image/2018/03/01/800x_a16-9_b0_q81_p1/16th-century-scroll-to-be-displayed-in-Layton.JPG */
+/* scrolls-pile2 link: https://izbicki.me/img/scroll/scrolls-pile2.jpg */
+/* mrt link: https://media.giphy.com/media/xT5LMMjQXvcTi1xh0Q/giphy.gif */
 
 * {
   margin: 0;
@@ -57,11 +61,11 @@ h2:after {
 /* HEADER */
 
 header {
-  background-image: linear-gradient(rgba(0,0,0, 0.7), rgba(0,0,0, 0.7)), url('img/16th-century-scroll.JPG');
+  background-image: linear-gradient(rgba(0,0,0, 0.7), rgba(0,0,0, 0.7)), url('http://www.standard.net/image/2018/03/01/800x_a16-9_b0_q81_p1/16th-century-scroll-to-be-displayed-in-Layton.JPG');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  height: 100vh;
+  height: 80vh;
 }
 
 .main-header {
@@ -97,10 +101,11 @@ header {
 
 
 .scroll-quotes {
-  background-image: linear-gradient(rgba(0,0,0, 0.7), rgba(0,0,0, 0.7)), url('img/scrolls-pile2.JPG');
+  background-image: linear-gradient(rgba(0,0,0, 0.7), rgba(0,0,0, 0.7)), url('https://izbicki.me/img/scroll/scrolls-pile2.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  height: 60vh;
 }
 
 .scroll-quotes h2 {
@@ -130,4 +135,9 @@ cite {
   margin-top: 10px;
   display: block;
   font-size: 80%;
+}
+
+.dead-sea-scroll blockquote {
+  color: #585858;
+  font-weight: 1000;
 }
