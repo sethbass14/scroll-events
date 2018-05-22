@@ -29,12 +29,17 @@ const letsScroll = mrTModal => {
   const height = document.documentElement.scrollHeight || document.body.scrollHeight
   const currentScroll = window.scrollY + window.innerHeight
   const triggerHeight = height - height * .1
-  if (currentScroll >= triggerHeight) {
+  const triggerable = mrTModal.dataset.triggerable === 'true'
+  if (currentScroll >= triggerHeight && triggerable) {
     openModal(mrTModal)
+  }
+  if (currentScroll < triggerHeight) {
+    mrTModal.dataset.triggerable = 'true'
   }
 }
 const openModal = modal => {
   modal.style.display = 'block';
+  modal.dataset.triggerable = 'false';
 }
 
 const closeModal = modal => {
