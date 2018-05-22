@@ -43,14 +43,12 @@ const openModal = modal => {
 }
 
 const closeModal = modal => {
-  modal.style.display = 'none';
-  // modalContent.style.animationName = 'disappear';
-  // modal.style.animationName = 'fade-out';
-  // setTimeout(() => {
-  //   modalContent.style.animationName = 'topdrop';
-  //   modal.style.display = 'none';
-  //   modal.style.animationName = 'fade-in'
-  // }, 1000)
+    const modalContent = modal.firstElementChild
+    modalContent.style.animationName = 'disappear';
+    setTimeout(() => {
+      modal.style.display = 'none';
+      modalContent.style.animationName = 'scroll-up';
+    }, 800)  
 }
 
 

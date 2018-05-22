@@ -189,6 +189,8 @@ cite {
   border-radius: 20px;
   width: 80%;
   text-align: center;
+  animation-name: scroll-up;
+  animation-duration: 1.0s;
 }
 
 img {
@@ -201,3 +203,13 @@ span {
 }
 
 span:hover { cursor: pointer; }
+
+@keyframes scroll-up {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes disappear {
+  from {bottom: 0; opacity: 1}
+  to {bottom: -300px; opacity: 0}
+}
