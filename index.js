@@ -1,64 +1,66 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const navBar = document.getElementsByTagName('nav')[0]
-  const scrollDef = document.getElementById('scroll-definitions')
-  const mrTModal = document.getElementsByClassName('modal')[0]
-  const closeBtn = document.getElementById('close')
+  const navBar = document.getElementsByTagName('nav')[0];
+  const scrollDef = document.getElementById('scroll-definitions');
+  const mrTModal = document.getElementsByClassName('modal')[0];
+  const closeBtn = document.getElementById('close');
 
-  const navLinks = [...document.getElementsByClassName('main-nav')[0].children]
+  const navLinks = [...document.getElementsByClassName('main-nav')[0].children];
 
-  addClickListenerNavLinks(navLinks)
+  addClickListenerNavLinks(navLinks);
 
-  document.addEventListener('scroll', () => scrollHandler(navBar, scrollDef, mrTModal))
-  closeBtn.addEventListener('click', () => closeModal(mrTModal))
+  document.addEventListener('scroll', () => scrollHandler(navBar, scrollDef, mrTModal));
+  closeBtn.addEventListener('click', () => closeModal(mrTModal));
 
-})
+});
 
+//Goes through each li of the nav bar and adds click eventListeners
+//Each li has a data id of its corresponding's section's id
 const addClickListenerNavLinks = navLinks => {
   navLinks.forEach(link => {
-    const scrollToEl = document.getElementById(link.dataset.scrolltoid)
-    link.addEventListener('click', () => smoothScrollHandler(scrollToEl))
-  })
+    const scrollToEl = document.getElementById(link.dataset.scrolltoid);
+    link.addEventListener('click', () => smoothScrollHandler(scrollToEl));
+  });
 }
 
 //handles scroll events
 const scrollHandler = (navEl, limitEl, mrTModal) => {
   stickyify(navEl, limitEl);
-  letsScroll(mrTModal)
+  letsScroll(mrTModal);
 }
 
 //Takes in an element and gets its boundingClientRect object.
 //This object has the top, bottom, height, and width of an element relative to the viewport
 //So bodyRect refers to the positioning of the top of the body relative to the viewport
-//elemRect refers to the positioning of the top of the element in reference to the viewport
-//The offset finds the distance in px between the top of the page and the top of the element
+//elemRect refers to the positioning of the top of the element relatice to the viewport
+//The offset finds the distance in px between the top of the body and the top of the element
 //64 accounts for the height of the sticky nav
 const getElementOffSet = element => {
-  let bodyRect = document.body.getBoundingClientRect();
-  let elemRect = element.getBoundingClientRect();
-  // 64 px is hard coded as the sticky nav element for now
-  let offSet = elemRect.top - bodyRect.top - 64
+  const bodyRect = document.body.getBoundingClientRect();
+  const elemRect = element.getBoundingClientRect();
+  const offSet = elemRect.top - bodyRect.top - 64;
   return offSet
 }
 
+//Finds an element's offset from the top of the page and sets a smooth scroll to its top.
 const smoothScrollHandler = scrollEl => {
-  const offset = getElementOffSet(scrollEl)
+  const top = getElementOffSet(scrollEl);
   window.scroll({
-    top: offset,
+    top,
     behavior: 'smooth'
-  })
+  });
 }
 
 //Checks to see if the offSet aka the barrier where we want the sticky nav to show up is less than or equal to the current view port's top.
 const scrolledPast = element => {
-  const offSet = getElementOffSet(element)
-  const currentHeight = window.scrollY
+  const offSet = getElementOffSet(element);
+  const currentHeight = window.scrollY;
   return offSet <= currentHeight
 }
 
 //Checks if the current viewport has broken the sticky nav barrier.
 //If it has, it changes the nav's classname and the sticky nav appears
 const stickyify = (navEl, limitEl) => {
-  navEl.className = scrolledPast(limitEl) ? 'sticky' : ''
+  navEl.className = scrolledPast(limitEl) ? 'sticky' : '';
 }
 
 //Grabs the height of the entire body
@@ -69,15 +71,15 @@ const stickyify = (navEl, limitEl) => {
 //If currentScroll is greater than or equal to the triggerHeight and the modal is triggerable, we open the modal
 //If the currentScroll is less than the triggerHeight, then we set it to being triggerable again.
 const letsScroll = mrTModal => {
-  const height = document.documentElement.scrollHeight || document.body.scrollHeight
-  const currentScroll = window.scrollY + window.innerHeight
-  const triggerHeight = height - height * .1
-  const triggerable = mrTModal.dataset.triggerable === 'true'
+  const height = document.documentElement.scrollHeight || document.body.scrollHeight;
+  const currentScroll = window.scrollY + window.innerHeight;
+  const triggerHeight = height - height * .1;
+  const triggerable = mrTModal.dataset.triggerable === 'true';
   if (currentScroll >= triggerHeight && triggerable) {
-    openModal(mrTModal)
+    openModal(mrTModal);
   }
   if (currentScroll < triggerHeight) {
-    mrTModal.dataset.triggerable = 'true'
+    mrTModal.dataset.triggerable = 'true';
   }
 }
 
@@ -92,10 +94,10 @@ const openModal = modal => {
 //Grabs the modalContent and sets its animation to disappear
 //Sets a timeout after the animation is finished that hides the modal
 const closeModal = modal => {
-    const modalContent = modal.firstElementChild
+    const modalContent = modal.firstElementChild;
     modalContent.style.animationName = 'disappear';
     setTimeout(() => {
       modal.style.display = 'none';
       modalContent.style.animationName = 'scroll-up';
-    }, 800)
+    }, 800);
 }

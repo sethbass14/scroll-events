@@ -20,7 +20,6 @@
 /* ELEMENTS */
 
 section {
-  /* padding: 0 10px 30px; */
   width: 100%;
 }
 
@@ -29,18 +28,13 @@ ul {
   margin-bottom: 20px;
 }
 
-header li {
-  color: white;
-  cursor: pointer;
-}
-
 h1,
 h2 { text-transform: uppercase; }
 
 h1 {
   font-size: 200%;
   color: white;
-  padding-top: 80px;
+  padding: 80px 20px 30px;
 }
 
 h2 {
@@ -60,6 +54,7 @@ h2:after {
   background-color: #CC0000;
 }
 
+.content { padding: 0 20px 30px; }
 /* HEADER */
 
 header {
@@ -69,8 +64,6 @@ header {
   background-attachment: fixed;
   height: 500px;
 }
-
-/* .main-header { margin-top: 100px; } */
 
 /*  NAV */
 
@@ -82,6 +75,15 @@ header {
 .main-nav li {
   display: inline;
   margin-right: 50px;
+  color: white;
+  cursor: pointer;
+  padding-bottom: 8px;
+  border-bottom: 2px transparent white;
+  transition: border-bottom 0.2s;
+}
+
+.main-nav li:hover {
+  border-bottom: 2px solid white;
 }
 
 .sticky {
