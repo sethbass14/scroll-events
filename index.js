@@ -1,9 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const navBar = document.getElementsByTagName[0]
+  const navBar = document.getElementsByTagName('nav')[0]
+  const scrollDef = document.getElementById('scroll-definitions')
   
-  document.addEventListener('scroll', () => scrollHandler(navbar))
+  document.addEventListener('scroll', () => scrollHandler(navBar, scrollDef))
 })
 
+const scrollHandler = (navEl, limitEl) => {
+  stickyify(navEl, limitEl)
+}
+
+const scrolledPast = element => {
+  let bodyRect = document.body.getBoundingClientRect();
+  let elemRect = element.getBoundingClientRect();
+  let offSet = elemRect.top - bodyRect.top
+  const currentHeight = window.scrollY
+  return offSet <= currentHeight
+}
+
+const stickyify = (navEl, limitEl) => {
+  navEl.className = scrolledPast(limitEl) ? 'sticky' : ''
+}
 // const openModal = modal => {
 //   modal.style.display = 'block';
 // }
