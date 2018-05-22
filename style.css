@@ -194,3 +194,10 @@ cite {
 img {
   border-radius: 25%;
 }
+
+span {
+  font-size: 200%;
+  float: right;
+}
+
+span:hover { cursor: pointer; }
