@@ -171,6 +171,7 @@ cite {
 }
 
 .modal {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -191,5 +192,5 @@ cite {
 }
 
 img {
-  border-radius: 50%;
+  border-radius: 25%;
 }

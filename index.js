@@ -1,12 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
   const navBar = document.getElementsByTagName('nav')[0]
   const scrollDef = document.getElementById('scroll-definitions')
+  const mrTModal = document.getElementsByClassName('modal')[0]
   
-  document.addEventListener('scroll', () => scrollHandler(navBar, scrollDef))
+  document.addEventListener('scroll', () => scrollHandler(navBar, scrollDef, mrTModal))
 })
 
-const scrollHandler = (navEl, limitEl) => {
-  stickyify(navEl, limitEl)
+const scrollHandler = (navEl, limitEl, mrTModal) => {
+  stickyify(navEl, limitEl);
+  letsScroll(mrTModal)
 }
 
 const scrolledPast = element => {
@@ -20,9 +22,18 @@ const scrolledPast = element => {
 const stickyify = (navEl, limitEl) => {
   navEl.className = scrolledPast(limitEl) ? 'sticky' : ''
 }
-// const openModal = modal => {
-//   modal.style.display = 'block';
-// }
+
+const letsScroll = mrTModal => {
+  const height = document.documentElement.scrollHeight || document.body.scrollHeight
+  const currentScroll = window.scrollY + window.innerHeight
+  const triggerHeight = height - height * .1
+  if (currentScroll >= triggerHeight) {
+    openModal(mrTModal)
+  }
+}
+const openModal = modal => {
+  modal.style.display = 'block';
+}
 // 
 // const closeModal = modal => {
 //   const modalContent = modal.firstElementChild
@@ -34,12 +45,5 @@ const stickyify = (navEl, limitEl) => {
 //     modal.style.animationName = 'fade-in'
 //   }, 1000)
 // }
-// 
-// const handleSubmit = (form, modal) => {
-//   event.preventDefault()
-//   const name = form.elements.name.value
-//   const email = form.elements.email.value
-//   alert(`Hey ${name}! Your email is ${email}!`)
-//   closeModal(modal)
-//   form.reset()
-// }
+
+
