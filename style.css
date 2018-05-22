@@ -8,7 +8,6 @@
 /* unfurled scroll: https://previews.123rf.com/images/sedneva/sedneva1103/sedneva110300048/9009907-old-paper-scroll-isolated-on-white-background.jpg */
 /* mrt link: https://media.giphy.com/media/xT5LMMjQXvcTi1xh0Q/giphy.gif */
 
-
 * {
   margin: 0;
   padding: 0;
@@ -30,9 +29,9 @@ ul {
   margin-bottom: 20px;
 }
 
-a {
-  text-decoration: none;
+header li {
   color: white;
+  cursor: pointer;
 }
 
 h1,
