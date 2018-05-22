@@ -4,9 +4,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const mrTModal = document.getElementsByClassName('modal')[0]
   const closeBtn = document.getElementById('close')
 
+  const navLinks = [...document.getElementsByClassName('main-nav')[0].children]
+
+  addClickListenerNavLinks(navLinks)
+
   document.addEventListener('scroll', () => scrollHandler(navBar, scrollDef, mrTModal))
   closeBtn.addEventListener('click', () => closeModal(mrTModal))
+
 })
+
+const addClickListenerNavLinks = navLinks => {
+  navLinks.forEach(link => {
+    const scrollToEl = document.getElementById(link.dataset.scrolltoid)
+    link.addEventListener('click', () => smoothScrollHandler(scrollToEl))
+  })
+}
 
 //handles scroll events
 const scrollHandler = (navEl, limitEl, mrTModal) => {
@@ -26,6 +38,14 @@ const getElementOffSet = element => {
   // 64 px is hard coded as the sticky nav element for now
   let offSet = elemRect.top - bodyRect.top - 64
   return offSet
+}
+
+const smoothScrollHandler = scrollEl => {
+  const offset = getElementOffSet(scrollEl)
+  window.scroll({
+    top: offset,
+    behavior: 'smooth'
+  })
 }
 
 //Checks to see if the offSet aka the barrier where we want the sticky nav to show up is less than or equal to the current view port's top.
@@ -63,7 +83,7 @@ const letsScroll = mrTModal => {
 
 //Displays the modal
 //Makes the modal untriggerable to account for when the modal is closed under the threshold, but the user has not scrolled past the threshold.
-//This means that the user can scroll up after dismissing the modal without another modal trigger. 
+//This means that the user can scroll up after dismissing the modal without another modal trigger.
 const openModal = modal => {
   modal.style.display = 'block';
   modal.dataset.triggerable = 'false';
