@@ -1,14 +1,9 @@
-// document.addEventListener('DOMContentLoaded', () => {
-//   const modal = document.getElementById('myModal');
-//   const myBtn = document.getElementById('myBtn');
-//   const span = document.getElementsByClassName('close')[0]
-//   const form = document.getElementById('sign-up-form')
-// 
-//   myBtn.addEventListener('click', () => openModal(modal) )
-//   span.addEventListener('click', () => closeModal(modal))
-//   form.addEventListener('submit', (event) => handleSubmit(form, modal))
-// })
-// 
+document.addEventListener('DOMContentLoaded', () => {
+  const navBar = document.getElementsByTagName[0]
+  
+  document.addEventListener('scroll', () => scrollHandler(navbar))
+})
+
 // const openModal = modal => {
 //   modal.style.display = 'block';
 // }

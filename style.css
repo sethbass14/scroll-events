@@ -67,12 +67,11 @@ header {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  height: 80vh;
+  height: 500px;
 }
 
 .main-header {
   margin-top: 100px;
-
 }
 
 /*  NAV */
@@ -85,6 +84,10 @@ header {
 .main-nav li {
   display: inline;
   margin-right: 50px;
+}
+
+.sticky {
+  position: absolute;
 }
 
 /* DEFINITIONS */
@@ -107,7 +110,7 @@ header {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  height: 60vh;
+  height: 500px;
 }
 
 .scroll-quotes h2 {
