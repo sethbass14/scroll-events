@@ -4,7 +4,9 @@
 /* grey text: #585858 */
 /* 16th 16th-century-scroll: http://www.standard.net/image/2018/03/01/800x_a16-9_b0_q81_p1/16th-century-scroll-to-be-displayed-in-Layton.JPG */
 /* scrolls-pile2 link: https://izbicki.me/img/scroll/scrolls-pile2.jpg */
+/* unfurled scroll: https://previews.123rf.com/images/sedneva/sedneva1103/sedneva110300048/9009907-old-paper-scroll-isolated-on-white-background.jpg */
 /* mrt link: https://media.giphy.com/media/xT5LMMjQXvcTi1xh0Q/giphy.gif */
+
 
 * {
   margin: 0;
@@ -140,4 +142,21 @@ cite {
 .dead-sea-scroll blockquote {
   color: #585858;
   font-weight: 1000;
+}
+
+.section-arrows {
+  background-image: linear-gradient(rgba(0,0,0, 0.7), rgba(0,0,0, 0.7)), url('https://previews.123rf.com/images/sedneva/sedneva1103/sedneva110300048/9009907-old-paper-scroll-isolated-on-white-background.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.section-arrows h2 {
+  color: white;
+  word-spacing: 5px;
+}
+
+.section-arrows div {
+  color: #CC0000;
+  text-align: center;
+  font-size: 1000%;
 }
