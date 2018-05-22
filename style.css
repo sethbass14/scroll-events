@@ -21,7 +21,7 @@
 /* ELEMENTS */
 
 section {
-  padding: 0 10px 30px;
+  /* padding: 0 10px 30px; */
   width: 100%;
 }
 
@@ -41,7 +41,7 @@ h2 { text-transform: uppercase; }
 h1 {
   font-size: 200%;
   color: white;
-  /* padding: 0 10%; */
+  padding-top: 80px;
 }
 
 h2 {
@@ -71,9 +71,7 @@ header {
   height: 500px;
 }
 
-.main-header {
-  margin-top: 100px;
-}
+/* .main-header { margin-top: 100px; } */
 
 /*  NAV */
 
@@ -104,12 +102,9 @@ header {
   grid-template-columns: auto auto auto
 }
 
-.scroll-definitions {
-  background-color: #F4F4F4;
-}
+.scroll-definitions { background-color: #F4F4F4; }
 
 /*  SCROLL QUOTES */
-
 
 .scroll-quotes {
   background-image: linear-gradient(rgba(0,0,0, 0.7), rgba(0,0,0, 0.7)), url('https://izbicki.me/img/scroll/scrolls-pile2.jpg');
@@ -119,9 +114,7 @@ header {
   height: 500px;
 }
 
-.scroll-quotes h2 {
-  color: white;
-}
+.scroll-quotes h2 { color: white; }
 
 blockquote {
   padding: 2%;
@@ -193,9 +186,7 @@ cite {
   animation-duration: 1.0s;
 }
 
-img {
-  border-radius: 25%;
-}
+img { border-radius: 25%; }
 
 span {
   font-size: 200%;
