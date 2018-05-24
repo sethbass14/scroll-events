@@ -89,7 +89,7 @@ header {
 .sticky {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   width: 100%;
   background-color: #7F2626;
   z-index: 1;
