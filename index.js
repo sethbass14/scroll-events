@@ -52,9 +52,9 @@ const smoothScrollHandler = scrollEl => {
 
 //Checks to see if the offSet aka the barrier where we want the sticky nav to show up is less than or equal to the current view port's top.
 const scrolledPast = element => {
-  const offSet = getElementOffSet(element);
+  const elemRect = element.getBoundingClientRect();
   const currentHeight = window.scrollY;
-  return offSet <= currentHeight
+  return elemRect.top - 64 <= 0
 }
 
 //Checks if the current viewport has broken the sticky nav barrier.
